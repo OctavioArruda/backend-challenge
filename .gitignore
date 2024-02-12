@@ -173,7 +173,13 @@ ehthumbs.db
 
 # API specific ignores
 /API/bin/
+/Domain/bin
+/Application/bin
+/Infrastructure/bin
 /API/obj/
+/Domain/obj/
+/Application/obj/
+/Infrastructure/obj
 /API/*.user
 /API/*.psess
 /API/*.cache
