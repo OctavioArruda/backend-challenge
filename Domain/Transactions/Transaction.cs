@@ -1,16 +1,16 @@
 namespace Domain.Transactions;
 
-public record TransactionDto
+public record Transaction
 {
-    public TransactionDto(long valor, string tipo, string descricao)
+    public Transaction(long valor, string tipo, string descricao)
     {
         Valor = valor >= 0 ?
             valor :
-            throw new ArgumentOutOfRangeException(nameof(TransactionDto.Valor), "Valor must not be negative.");
+            throw new ArgumentOutOfRangeException(nameof(Transaction.Valor), "Valor must not be negative.");
 
         Tipo = tipo == "c" || tipo == "d" ?
             tipo :
-            throw new ArgumentException("Tipo must be 'c' or 'd'.", nameof(TransactionDto.Tipo));
+            throw new ArgumentException("Tipo must be 'c' or 'd'.", nameof(Transaction.Tipo));
 
         Descricao = descricao;
     }
