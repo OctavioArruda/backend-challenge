@@ -171,6 +171,9 @@ ehthumbs.db
 # Visual Studio 2015/2017/2019 cache/options directory
 .vs/
 
+# Postgres data
+/postgres-data
+
 # API specific ignores
 /API/bin/
 /Domain/bin
