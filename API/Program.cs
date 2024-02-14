@@ -1,10 +1,11 @@
 using Domain.Accounts;
-using Domain.Contracts.Interfaces;
+using Domain.Contracts.Interfaces.Services;
 using Domain.Transactions;
 using Infrastructure.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddRepositories();
 builder.Services.AddServices();
 
 var app = builder.Build();

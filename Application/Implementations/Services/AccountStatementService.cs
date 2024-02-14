@@ -1,11 +1,19 @@
-using Domain.Contracts.Interfaces;
+using Domain.Contracts.Interfaces.Repositories;
+using Domain.Contracts.Interfaces.Services;
 
 namespace Application.Implementations.Services;
 
 public sealed class AccountStatementService : IAccountStatementService
 {
-    public Task<BankAccountStatement> Get(long id)
+    private readonly IAccountStatementRepository _repository;
+
+    public AccountStatementService(IAccountStatementRepository repository)
     {
-        throw new NotImplementedException();
+        _repository = repository;
+    }
+
+    public async Task<BankAccountStatement> Get(long id)
+    {
+        return await _repository.Get(id);
     }
 }

@@ -1,13 +1,21 @@
 using Domain.Accounts;
-using Domain.Contracts.Interfaces;
+using Domain.Contracts.Interfaces.Repositories;
+using Domain.Contracts.Interfaces.Services;
 using Domain.Transactions;
 
 namespace Application.Implementations.Services;
 
 public sealed class TransactionService : ITransactionService
 {
-    public Task<Account> Process(Transaction transaction)
+    private readonly ITransactionRepository _repository;
+
+    public TransactionService(ITransactionRepository repository)
     {
-        throw new NotImplementedException();
+        _repository = repository;
+    }
+
+    public async Task<Account> Process(Transaction transaction)
+    {
+        return await _repository.Process(transaction);
     }
 }

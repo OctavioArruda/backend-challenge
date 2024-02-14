@@ -1,7 +1,7 @@
 using Domain.Accounts;
 using Domain.Transactions;
 
-namespace Domain.Contracts.Interfaces;
+namespace Domain.Contracts.Interfaces.Services;
 
 public interface ITransactionService
 {

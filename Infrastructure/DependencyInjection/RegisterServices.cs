@@ -1,5 +1,5 @@
 using Application.Implementations.Services;
-using Domain.Contracts.Interfaces;
+using Domain.Contracts.Interfaces.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure.DependencyInjection;

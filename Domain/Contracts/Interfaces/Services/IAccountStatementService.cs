@@ -1,4 +1,4 @@
-namespace Domain.Contracts.Interfaces;
+namespace Domain.Contracts.Interfaces.Services;
 
 public interface IAccountStatementService
 {
