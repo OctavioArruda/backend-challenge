@@ -12,19 +12,21 @@ services:
     depends_on:
       - db
     environment:
-      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=mydatabase;Username=root;Password=root
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=mydatabase;Username=postgres;Password=postgres;Include Error Detail=true
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
 
   db:
     image: postgres:latest
     environment:
       POSTGRES_DB: mydatabase
-      POSTGRES_USER: myuser
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5432:5432"
+      - "54320:5432"
     volumes:
       - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
-      - ./postgres-data:/var/lib/postgresql/data
+      # - ./postgres-data:/var/lib/postgresql/data -- uncomment this to persist changes after db init
     logging:
       driver: json-file
       options:

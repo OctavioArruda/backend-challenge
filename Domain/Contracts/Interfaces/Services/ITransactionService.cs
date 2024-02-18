@@ -5,5 +5,5 @@ namespace Domain.Contracts.Interfaces.Services;
 
 public interface ITransactionService
 {
-    public Task<Account> Process(Transaction transaction);
+    public Task<Account> Process(Transaction transaction, long clientId);
 }
