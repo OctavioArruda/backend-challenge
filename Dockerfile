@@ -1,6 +1,7 @@
 # Use the official Microsoft .NET Core SDK image to restore and build the project
 FROM mcr.microsoft.com/dotnet/sdk:latest AS build
 WORKDIR /src
+
 # Copy the solution file and all the csproj files individually to restore dependencies
 COPY ["BackendChallenge.sln", "./"]
 COPY ["API/API.csproj", "./API/"]
