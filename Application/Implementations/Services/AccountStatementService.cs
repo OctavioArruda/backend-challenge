@@ -12,8 +12,8 @@ public sealed class AccountStatementService : IAccountStatementService
         _repository = repository;
     }
 
-    public async Task<BankAccountStatement> Get(long id)
+    public BankAccountStatement Get(long id)
     {
-        return await _repository.Get(id);
+        return _repository.Get(id);
     }
 }

@@ -5,5 +5,5 @@ namespace Domain.Contracts.Interfaces.Repositories;
 
 public interface ITransactionRepository
 {
-    public Task<Account> Process(Transaction transaction);
+    public Task<Account> Process(Transaction transaction, long clientId);
 }
